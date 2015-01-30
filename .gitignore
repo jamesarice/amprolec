@@ -4,3 +4,15 @@ vendor/*
 test/Unit/_Report/*
 test/Unit/phpunit.output*
 /.project
+*.sublime-*
+assets/.sass-cache/*
+assets/.sass-cache/*/*
+assets/.sass-cache*
+assets/style/.sass-cache/*
+assets/style/.sass-cache/*/*
+assets/style/.sass-cache*
+*.scssc
+www*
+www/*
+www/**
+data/joblist.dat
