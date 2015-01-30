@@ -1,0 +1,6 @@
+vendor/*
+*.sublime-*
+*.phar
+test/Unit/_Report/*
+test/Unit/phpunit.output*
+/.project

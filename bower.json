@@ -1,0 +1,13 @@
+{
+	"name": "Empty Blueprint",
+	"dependencies": {
+		"normalize-css": "latest"
+	},
+	"install": {
+		"path": {
+			"css": "src/Style/Lib",
+			"scss": "src/Style/Lib",
+			"js": "src/Script/Lib"
+		}
+	}
+}
