@@ -1,4 +1,5 @@
 @import "_variables.scss";
+@import "_fonts.scss";
 
 body {
 
@@ -10,6 +11,9 @@ body {
 
 	font-size: 16px;
 	line-height: 22px;
+	font-family: 'Avenir Book', sans-serif;
+	color: $secondary;
+	text-rendering: optimizeLegibility;
 
 	> header,
 	> main,
@@ -24,14 +28,14 @@ body {
 			overflow: auto;
 			padding: 1rem 0 2rem 0;
 			@media only screen and (min-width: $break-medium) {
-				padding: 2rem 0 4rem 0;
+				padding: 2rem 0 2rem 0;
 			}
-
 		}
 	}
 
 	h1 {
 		font-size: 1.2rem;
+		font-family: 'Avenir Medium', sans-serif;
 	}
 
 	h2 {
@@ -47,13 +51,18 @@ body {
 		max-width: 100%;
 	}
 
+	a {
+		color: $primary;
+		text-decoration: none;
+	}
+
 	.btn, input[type='submit'] {
 		color: white;
 		text-decoration: none;
 		border-radius: 0.2rem;
 		display: inline-block;
 		margin-bottom: 0.4rem;
-		background-color: red;
+		background-color: $primary;
 		padding: 0.6rem 1.4rem;
 		@media only screen and (min-width: $break-medium) {
 			font-size: 1.4rem;
@@ -61,10 +70,10 @@ body {
 		}
 		&:hover {
 			text-decoration: none;
-			background-color: lighten(red, 2%);
+			background-color: lighten($primary, 2%);
 		}
 		&:active {
-			background-color: darken(red, 4%);
+			background-color: darken($primary, 4%);
 		}
 	}
 
@@ -77,14 +86,46 @@ body {
 	}
 
 	header[role="main"] {
-		background: grey;
+		background: $primary;
+		color: $tertiary;
 		section {
+			color: $secondary;
+			position: relative;
+			a {
+				color: $secondary;
+			}
+			> a {
+				float: left;
+				h1 {
+					background-image: url('/Asset/amprolec.svg');
+					background-size: 210px 50px;
+					width: 210px;
+					height: 50px;
+					text-indent: -90000px;
+					display: inline-block;
+					margin-bottom: 0;
+					@media only screen and (min-width: $break-medium) {
+						// background-size: 160px 105px;
+						// width: 160px;
+						// height: 105px;
+					}
+				}
+			}
+			
+			span {
+				font-family: 'Avenir Medium', sans-serif;
+				text-indent: 3.3rem;
+				position: absolute;
+				left: 0;
+				top: 5.6rem;
+			}
 			aside[role="contact"] {
 				display: none;
 				@media only screen and (min-width: $break-medium) {
 					display: block;
 					width: 33.33333333333333%;
 					float: right;
+					margin-top: 1.2rem;
 					ul {
 						li {
 							height: 2rem;
@@ -97,6 +138,9 @@ body {
 		
 		nav {
 			padding: 0;
+			a {
+				color: $tertiary;
+			}
 			input {
 				display: none;
 			}
@@ -112,9 +156,16 @@ body {
 			ul {
 				display: none;
 				@media only screen and (min-width: $break-medium) {
+					border-top: 2px solid $secondary;
 					display: block;
 					li {
 						display: inline-block;
+						margin-right: 1rem;
+						a {
+							height: 4rem;
+							line-height: 4rem;
+							display: block;
+						}
 					}
 				}
 			}
@@ -131,7 +182,7 @@ body {
 	}
 
 	main[role="content"] {
-		background: blue;
+		background: $tertiary;
 		section {
 			> header {
 				h1 {
@@ -142,6 +193,7 @@ body {
 					line-height: 2rem;
 					max-width: 46rem;
 					display: block;
+					font-family: 'Avenir Medium', sans-serif;
 					&#intro {
 						@media only screen and (min-width: $break-medium) {
 							padding: 1rem 0 3rem 0;
@@ -233,20 +285,18 @@ body {
 	}
 	
 	section[role="accreditation"] {
-		background: pink;
+		background: lighten($tertiary, 5%);
 		@media only screen and (min-width: $break-medium) {
 			section {
 				section {
 					img {
-						max-width: 90%;
+						max-width: 80%;
 					}
 					width: 33.33333333333333%;
 					float: left;
 					&:first-of-type {
-						background: blue;
 					}
 					&:nth-of-type(2) {
-						background: red;
 					}	
 					display: block;
 				}
@@ -255,7 +305,7 @@ body {
 	}
 
 	section[role="environmental"] {
-		background: green;
+		background: lighten($tertiary, 2%);
 		@media only screen and (min-width: $break-medium) {
 			section {
 				section {
@@ -275,18 +325,22 @@ body {
 	}
 
 	footer[role="colophon"] {
-		background: red;
+		background: $secondary;
+		color: $tertiary;
 		nav {
 			@media only screen and (min-width: $break-medium) {
 				ul {
 					width: 33.33333333333333%;
 					float: left;
+					color: $primary;
 					li {
 						height: 2rem;
 						line-height: 2rem;
 						&:first-of-type {
 							margin: 0 0 1.8rem 0;
 							display: inline-block;
+							color: $tertiary;
+							font-family: 'Avenir Medium', sans-serif;
 						}
 					}
 				}
