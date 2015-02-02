@@ -112,33 +112,44 @@ body {
 		section {
 			color: $secondary;
 			position: relative;
+			padding: 0;
 			a {
 				color: $secondary;
 			}
 			> a {
 				float: left;
+				width: 100%;
+				@media only screen and (min-width: $break-medium) {
+					width: auto;
+					padding: 2rem 0;
+					margin-bottom: 2rem;
+				}
 				h1 {
-					background-image: url('/Asset/amprolec.svg');
-					background-size: 210px 50px;
-					width: 210px;
-					height: 50px;
 					text-indent: -90000px;
 					display: inline-block;
 					margin-bottom: 0;
+					background-image: url('/Asset/amprolecStack.svg');
+					background-size: 120px 75px;
+					width: 120px;
+					height: 75px;
 					@media only screen and (min-width: $break-medium) {
-						// background-size: 160px 105px;
-						// width: 160px;
-						// height: 105px;
+						background-image: url('/Asset/amprolec.svg');
+						background-size: 210px 50px;
+						width: 210px;
+						height: 50px;
 					}
 				}
 			}
 			
 			span {
 				font-family: 'Avenir Medium', sans-serif;
-				text-indent: 3.3rem;
-				position: absolute;
-				left: 0;
-				top: 5.6rem;
+				float: left;
+				@media only screen and (min-width: $break-medium) {
+					text-indent: 3.3rem;
+					position: absolute;
+					left: 0;
+					top: 5.6rem;
+				}
 			}
 			aside[role="contact"] {
 				display: none;
@@ -146,11 +157,11 @@ body {
 					display: block;
 					width: 33.33333333333333%;
 					float: right;
-					margin-top: 1.2rem;
+					margin-top: 3.8rem;
 					ul {
 						li {
-							height: 2rem;
-							line-height: 2rem;
+							height: 1.7rem;
+							line-height: 1.8rem;
 						}
 					}
 				}
@@ -169,8 +180,16 @@ body {
 				display: none;
 			}
 			label {
+				font-family: 'Avenir Black', sans-serif;
 				cursor: pointer;
-				&::before {
+				height: 4rem;
+				line-height: 4rem;
+				width: 100%;
+				display: block;
+				border-top: 2px solid $secondary;
+				margin: 1rem 0 0 0;
+				text-transform: uppercase;
+				&::after {
 					content: 'Menu';
 				}
 				@media only screen and (min-width: $break-medium) {
@@ -179,6 +198,15 @@ body {
 			}
 			ul {
 				display: none;
+				li {
+					a {
+						font-family: 'Avenir Medium', sans-serif;
+						display: block;
+						height: 3rem;
+						line-height: 3rem;
+						border-top: 1px solid $secondary;
+					}
+				}
 				@media only screen and (min-width: $break-medium) {
 					border-top: 2px solid $secondary;
 					display: block;
@@ -189,6 +217,7 @@ body {
 							height: 4rem;
 							line-height: 4rem;
 							display: block;
+							border: none;
 						}
 					}
 				}
@@ -197,7 +226,7 @@ body {
 				display: block;
 			}
 			input#main-nav:checked ~ label {
-				&::before {
+				&::after {
 					content: 'Close';
 				}
 			}
@@ -212,16 +241,20 @@ body {
 			> header {
 				h1 {
 					font-size: 2rem;
+					line-height: 2.2rem;
 				}
 				span {
-					font-size: 1.6rem;
-					line-height: 2rem;
-					max-width: 46rem;
-					display: block;
 					font-family: 'Avenir Medium', sans-serif;
+					display: block;
+					font-size: 1.2rem;
+					@media only screen and (min-width: $break-medium) {
+						font-size: 1.6rem;
+						line-height: 2rem;
+						max-width: 44rem;
+					}
 					&#intro {
+						padding: 1rem 0 1rem 0;
 						@media only screen and (min-width: $break-medium) {
-							padding: 1rem 0 3rem 0;
 							line-height: 2.2rem;
 						}
 					}
@@ -257,12 +290,14 @@ body {
 
 				article[role="for-lighting"],
 				article[role="for-electrical"] {
+					margin: 2rem 0;
+					background: white;
+					padding: 1rem;
+					border-radius: 0.2rem;
 					@media only screen and (min-width: $break-medium) {
 						width: 48%;
-						background: white;
 						padding: 2rem;
 						box-sizing: border-box;
-						border-radius: 0.2rem;
 						overflow: hidden;
 						figure {
 							margin: -2rem 0 2rem -2rem;
@@ -299,9 +334,9 @@ body {
 				padding: 1rem 0 0 0;
 				background: white;
 				position: relative;
+				border-radius: 0.2rem;
 				@media only screen and (min-width: $break-medium) {
 					width: 80%;
-					border-radius: 0.2rem;
 					margin: 2rem 0 0;
 					z-index: 1;
 					display: block;
@@ -331,7 +366,10 @@ body {
 					}
 				}
 				ol {
-					padding-left: 2rem;
+					padding-left: 1rem;
+					@media only screen and (min-width: $break-medium) {
+						padding-left: 2rem;
+					}
 					li {
 						list-style: initial;
 						list-style-type: decimal;
@@ -348,27 +386,31 @@ body {
 					}
 				}
 				figure {
-					position: absolute;
-					top: 1rem;
-					right: -25%;
-					width: 40%;
-					-webkit-transform: rotate(2deg);
-					transform: rotate(2deg);
-					box-shadow: 0 2px 5px rgba($secondary, 0.2);
-					img {
-						float: left;
-					}
-					&::after {
-						content: '';
-						width: 1rem;
-						height: 4rem;
-						border: 2px solid $secondary;
+					display: none;
+					@media only screen and (min-width: $break-medium) {
+						display: block;
 						position: absolute;
-						left: 3rem;
-						top: -2rem;
-						border-radius: 0.8rem;
-						-webkit-transform: rotate(-4deg);
-						transform: rotate(-4deg);
+						top: 1rem;
+						right: -25%;
+						width: 40%;
+						-webkit-transform: rotate(2deg);
+						transform: rotate(2deg);
+						box-shadow: 0 2px 5px rgba($secondary, 0.2);
+						img {
+							float: left;
+						}
+						&::after {
+							content: '';
+							width: 1rem;
+							height: 4rem;
+							border: 2px solid $secondary;
+							position: absolute;
+							left: 3rem;
+							top: -2rem;
+							border-radius: 0.8rem;
+							-webkit-transform: rotate(-4deg);
+							transform: rotate(-4deg);
+						}
 					}
 				}
 			}
@@ -378,8 +420,10 @@ body {
 				}
 				form {
 					background: white;
+					border-radius: 0.2rem;
+					padding: 1rem;
+					margin: 0 0 1rem 0;
 					@media only screen and (min-width: $break-medium) {
-						border-radius: 0.2rem;
 						padding: 2rem;
 						width: 80%;
 						margin: 1rem 0 0 0;
@@ -413,6 +457,13 @@ body {
 	
 	section[role="accreditation"] {
 		background: lighten($tertiary, 5%);
+		section {
+			section {
+				img {
+					max-width: 80%;
+				}
+			}
+		}
 		@media only screen and (min-width: $break-medium) {
 			section {
 				section {
@@ -456,20 +507,29 @@ body {
 		background: $secondary;
 		color: $tertiary;
 		nav {
+			ul {
+				color: $primary;
+				li {
+					&:first-of-type {
+						font-family: 'Avenir Medium', sans-serif;
+						color: $tertiary;
+						display: inline-block;
+						margin: 1rem 0;
+					}
+					height: 2rem;
+					line-height: 2rem;
+				}
+			}
 			@media only screen and (min-width: $break-medium) {
 				ul {
 					width: 33.33333333333333%;
 					float: left;
-					color: $primary;
 					li {
-						height: 2rem;
-						line-height: 2rem;
 						&:first-of-type {
 							margin: 0 0 1.8rem 0;
-							display: inline-block;
-							color: $tertiary;
-							font-family: 'Avenir Medium', sans-serif;
 						}
+						height: 2rem;
+						line-height: 2rem;
 					}
 				}
 			}
