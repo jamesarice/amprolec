@@ -329,6 +329,9 @@ body {
 				@media only screen and (min-width: $break-medium) {
 					width: 33.33333333333333%;
 					float: right;
+					img {
+						margin-top: 1rem;
+					}
 				}
 				address {
 					font-style: normal;
@@ -358,7 +361,8 @@ body {
 	}
 
 	section[role="environmental"] {
-		background: lighten($tertiary, 2%);
+		color: $enviro;
+		background: lighten($tertiary, 10%);
 		@media only screen and (min-width: $break-medium) {
 			section {
 				section {
