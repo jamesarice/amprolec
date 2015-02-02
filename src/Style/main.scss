@@ -424,6 +424,7 @@ body {
 					border-radius: 0.2rem;
 					padding: 1rem;
 					margin: 0 0 1rem 0;
+					-webkit-appearance: none;
 					@media only screen and (min-width: $break-medium) {
 						padding: 2rem;
 						width: 80%;
@@ -435,9 +436,15 @@ body {
 					}
 					textarea {
 						width: 80%;
+						border: 1px solid $tertiary;
+						outline: 0;
+						border-radius: 0.4rem;
+						-webkit-appearance: none;
+						padding: 0.6rem;
 					}
 					input:not([type="submit"]) {
 						margin-bottom: 1rem;
+						padding: 0.6rem;
 					}
 				}
 			}
