@@ -19,16 +19,16 @@ body {
 	> main,
 	> section,
 	> footer {
-		overflow: auto;
+		overflow: hidden;
 
 		> section, > nav {
 			width: 90%;
 			max-width: 60rem;
 			margin: 0 auto;
-			overflow: auto;
+			overflow: hidden;
 			padding: 1rem 0 2rem 0;
 			@media only screen and (min-width: $break-medium) {
-				padding: 2rem 0 2rem 0;
+				padding: 2rem 0 4rem 0;
 			}
 		}
 	}
@@ -51,13 +51,24 @@ body {
 		max-width: 100%;
 	}
 
+	figure {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+
 	a {
 		color: $primary;
 		text-decoration: none;
 	}
 
+	p {
+		max-width: 40rem;
+	}
+
 	.btn, input[type='submit'] {
 		color: white;
+		font-family: 'Avenir Black', sans-serif;
 		text-decoration: none;
 		border-radius: 0.2rem;
 		display: inline-block;
@@ -140,6 +151,9 @@ body {
 			padding: 0;
 			a {
 				color: $tertiary;
+				&:hover {
+					color: white;
+				}
 			}
 			input {
 				display: none;
@@ -183,6 +197,7 @@ body {
 
 	main[role="content"] {
 		background: $tertiary;
+		overflow: hidden;
 		section {
 			> header {
 				h1 {
@@ -212,6 +227,16 @@ body {
 						background: white;
 						padding: 2rem;
 						box-sizing: border-box;
+						border-radius: 0.2rem;
+						figure {
+							margin: -2rem 0 2rem -2rem;
+							width: calc(100% + 4.1rem);
+							height: 12rem;
+							overflow: hidden;
+						}
+					}
+					h1 {
+						font-size: 1.4rem;
 					}
 				}
 				article[role="for-lighting"] {
@@ -228,16 +253,20 @@ body {
 				}
 			}
 			section[role="process"] {
-				padding: 1rem 0;
+				padding: 1rem 0 0 0;
 				background: white;
+				position: relative;
 				@media only screen and (min-width: $break-medium) {
 					width: 80%;
+					border-radius: 0.2rem;
+					margin: 2rem 0 0
 				}
 				ol {
 					padding-left: 2rem;
 					li {
 						list-style: initial;
 						list-style-type: decimal;
+						list-style-position: inside;
 						@media only screen and (min-width: $break-medium) {
 							margin: 0 0 2rem 0;
 						}
@@ -249,6 +278,28 @@ body {
 						}
 					}
 				}
+				figure {
+					position: absolute;
+					top: 1rem;
+					right: -25%;
+					width: 40%;
+					transform: rotate(2deg);
+					box-shadow: 0 2px 5px rgba($secondary, 0.2);
+					img {
+						float: left;
+					}
+					&::after {
+						content: '';
+						width: 1rem;
+						height: 4rem;
+						border: 2px solid $secondary;
+						position: absolute;
+						left: 4rem;
+						top: -2rem;
+						border-radius: 0.4rem;
+						transform: rotate(-4deg);
+					}
+				}
 			}
 			section[role="contact-us"] {
 				@media only screen and (min-width: $break-medium) {
@@ -257,8 +308,10 @@ body {
 				form {
 					background: white;
 					@media only screen and (min-width: $break-medium) {
+						border-radius: 0.2rem;
 						padding: 2rem;
 						width: 80%;
+						margin: 1rem 0 0 0;
 					}
 					label, 
 					input:not([type="submit"]) {
