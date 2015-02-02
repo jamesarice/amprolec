@@ -254,6 +254,7 @@ body {
 					}
 					&#intro {
 						padding: 1rem 0 1rem 0;
+						line-height: 1.6rem;
 						@media only screen and (min-width: $break-medium) {
 							line-height: 2.2rem;
 						}
@@ -290,7 +291,7 @@ body {
 
 				article[role="for-lighting"],
 				article[role="for-electrical"] {
-					margin: 2rem 0;
+					margin: 1rem 0 2rem 0;
 					background: white;
 					padding: 1rem;
 					border-radius: 0.2rem;
@@ -391,7 +392,7 @@ body {
 						display: block;
 						position: absolute;
 						top: 1rem;
-						right: -25%;
+						right: -20%;
 						width: 40%;
 						-webkit-transform: rotate(2deg);
 						transform: rotate(2deg);
@@ -405,7 +406,7 @@ body {
 							height: 4rem;
 							border: 2px solid $secondary;
 							position: absolute;
-							left: 3rem;
+							left: 5.4rem;
 							top: -2rem;
 							border-radius: 0.8rem;
 							-webkit-transform: rotate(-4deg);
