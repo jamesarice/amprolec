@@ -4,12 +4,13 @@
 			<h1>Contact</h1>
 		</header>
 		<section role="contact-us">
+			<p id="formError"></p>
 			<form method="post">
 				<label for="name">Full name</label>
-				<input type="text" placeholder="Name..." id="name">
-				<label for="email">Email address</label>
-				<input type="text" placeholder="you@email.com" id="email">
-				<textarea placeholder="Your comments..." rows ="5" name="comment-text"></textarea>
+				<input type="text" name="name" placeholder="Name..." required>
+				<label for="email" name="email">Email address</label>
+				<input name="email" type="email" placeholder="you@email.com" required>
+				<textarea placeholder="Your comments..." rows="5" name="comments"></textarea>
 			    <input type="submit" value="Send" name="submit" class="btn-small btn-secondary" >
 			</form>
 		</section>
