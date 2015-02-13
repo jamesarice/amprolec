@@ -444,10 +444,18 @@ body {
 						border-radius: 0.4rem;
 						-webkit-appearance: none;
 						padding: 0.6rem;
+						margin-bottom: 1rem;
 					}
 					input:not([type="submit"]) {
 						margin-bottom: 1rem;
 						padding: 0.6rem;
+						border: 1px solid $tertiary;
+						width: 80%;
+						margin-right: 20%;
+						@media only screen and (min-width: $break-medium) {
+							width: 60%;
+							margin-right: 40%;
+						}
 					}
 				}
 			}
