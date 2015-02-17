@@ -8,7 +8,7 @@ public function go() {
         return;
     }
 
-    $myemail  = "james@studiogutsy.co";
+    $toEmail  = "james@studiogutsy.co";
 
     if(!filter_var($_POST["email"],FILTER_VALIDATE_EMAIL)) {
         $this->document->getElementById("formError")->textContent = "Sorry, your email, {$_POST["email"]}, isn't valid.";
@@ -27,7 +27,7 @@ public function go() {
 
     ";
 
-    mail($myemail, "Contact form message", $message);
+    mail($toEmail, "Contact form message", $message, "From: " . $_POST["email"]);
 
     header('Location: /thank-you.html');
     exit();
