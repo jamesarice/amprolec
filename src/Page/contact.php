@@ -8,7 +8,7 @@ public function go() {
         return;
     }
 
-    $toEmail  = "james@studiogutsy.co";
+    $toEmail  = "info@amprolec.co.uk";
 
     if(!filter_var($_POST["email"],FILTER_VALIDATE_EMAIL)) {
         $this->document->getElementById("formError")->textContent = "Sorry, your email, {$_POST["email"]}, isn't valid.";
@@ -17,17 +17,25 @@ public function go() {
 
     $message = "Hello!
 
-    Your contact form has been submitted by:
+Your contact form has been submitted by:
 
-    Name: {$_POST["name"]}
-    E-mail: {$_POST["email"]}
+Name: {$_POST["name"]}
+E-mail: {$_POST["email"]}
 
-    Comments:
-    {$_POST["comments"]}
+Comments:
+{$_POST["comments"]}
 
     ";
 
-    mail($toEmail, "Contact form message", $message, "From: " . $_POST["email"]);
+    $mandrill = new \Mandrill('BgOgyPJftLJbWnsF3P9vmA');
+    $reply=$mandrill->messages->send([
+        "text" => $message,
+        "subject" => "Contact form message",
+        "from_email" => $_POST["email"],
+        "to" => [[
+            "email" => $toEmail,
+        ]],
+    ]);
 
     header('Location: /thank-you.html');
     exit();

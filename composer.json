@@ -1,5 +1,6 @@
 {
 	"require": {
-        "brightflair/php.gt": "dev-master"
+        "brightflair/php.gt": "dev-master",
+        "mandrill/mandrill": "1.0.*"
     }
 }
